@@ -1,0 +1,5 @@
+rootProject.name = 'JrlTools'
+
+include ':trace'
+include ':trace-spring'
+include ':trace-otel'
