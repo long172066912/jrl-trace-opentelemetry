@@ -1,4 +1,4 @@
-rootProject.name = 'JrlTools'
+rootProject.name = 'JrlTrace-otel'
 
 include ':trace'
 include ':trace-spring'
