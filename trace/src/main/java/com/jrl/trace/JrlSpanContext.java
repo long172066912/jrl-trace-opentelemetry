@@ -7,6 +7,9 @@ package com.jrl.trace;
  * @version V1.0
  */
 public interface JrlSpanContext {
+    String VERSION_00 = "00";
+    String TRACEPARENT_DELIMITER = "-";
+
     /**
      * 获取当前的span
      *

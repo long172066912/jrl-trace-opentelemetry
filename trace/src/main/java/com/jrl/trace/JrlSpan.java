@@ -1,5 +1,7 @@
 package com.jrl.trace;
 
+import com.jrl.trace.model.JrlTraceStatus;
+
 /**
  * 链路单节点信息
  * @author JerryLong
@@ -19,6 +21,13 @@ public interface JrlSpan {
      * @return
      */
     String getSpanId();
+
+    /**
+     * 设置状态
+     *
+     * @param jrlTraceStatus
+     */
+    void setStatus(JrlTraceStatus jrlTraceStatus);
 
     /**
      * 添加tag

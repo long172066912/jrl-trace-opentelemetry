@@ -1,18 +1,14 @@
 package com.jrl.trace.model;
 
 /**
- * trace状态枚举
- *
- * @author JerryLong
- */
+* @author JerryLong
+* @version V1.0
+*/
 public enum JrlTraceStatusCode {
     /**
      * 默认OK
      */
     OK,
-    /**
-     * 错误
-     */
     ERROR,
     ;
 }

@@ -1,8 +1,8 @@
 package com.jrl.trace.model;
 
 /**
-* trace状态，包含code与desc
 * @author JerryLong
+* @version V1.0
 */
 public class JrlTraceStatus {
     private JrlTraceStatusCode code;
