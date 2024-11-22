@@ -1,0 +1,14 @@
+
+// 定义自己的依赖
+dependencies {
+    api project(':trace')
+    api project(':trace-otel')
+    implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.7'
+    implementation('org.springframework.boot:spring-boot-starter:2.5.7')
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test:2.5.7"
+}
+
+test {
+    useJUnitPlatform()
+}
