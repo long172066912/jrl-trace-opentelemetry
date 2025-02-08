@@ -5,9 +5,5 @@ package org.jrl.trace;
  *
  * @author JerryLong
  */
-public interface JrlScope {
-    /**
-     * 结束作用域
-     */
-    void close();
+public interface JrlScope extends AutoCloseable {
 }
