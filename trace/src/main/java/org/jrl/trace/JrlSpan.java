@@ -41,4 +41,11 @@ public interface JrlSpan {
      * 结束
      */
     void end();
+
+    /**
+     * 获取scope
+     *
+     * @return
+     */
+    JrlScope getScope();
 }

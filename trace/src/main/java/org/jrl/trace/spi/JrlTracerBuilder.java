@@ -1,5 +1,6 @@
 package org.jrl.trace.spi;
 
+import org.jrl.trace.JrlScope;
 import org.jrl.trace.JrlSpan;
 import org.jrl.trace.JrlTracer;
 import org.jrl.trace.model.JrlTraceConstants;
@@ -71,6 +72,9 @@ public interface JrlTracerBuilder {
         };
 
         private static final JrlSpan DEFAULT_SPAN = new JrlSpan() {
+
+            private final JrlScope DEFAULT_SCOPE = () -> {};
+
             @Override
             public String getTraceId() {
                 return JrlTraceConstants.DEFAULT_TRACE_ID;
@@ -93,6 +97,11 @@ public interface JrlTracerBuilder {
 
             @Override
             public void end() {
+            }
+
+            @Override
+            public JrlScope getScope() {
+                return DEFAULT_SCOPE;
             }
         };
 
