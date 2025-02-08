@@ -100,7 +100,7 @@ public interface JrlTracerBuilder {
             }
 
             @Override
-            public JrlScope getScope() {
+            public JrlScope makeCurrent() {
                 return DEFAULT_SCOPE;
             }
         };

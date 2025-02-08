@@ -1,12 +1,12 @@
 package org.jrl.trace.otel;
 
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.StatusCode;
 import org.jrl.trace.JrlScope;
 import org.jrl.trace.JrlSpan;
 import org.jrl.trace.model.JrlTraceStatus;
 import org.jrl.trace.model.JrlTraceStatusCode;
 import org.jrl.trace.model.OtelContants;
-import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.StatusCode;
 
 /**
  * @author JerryLong
@@ -15,11 +15,9 @@ import io.opentelemetry.api.trace.StatusCode;
 public class JrlOtelSpan implements JrlSpan {
 
     private final Span span;
-    private final JrlOtelScope scope;
 
     public JrlOtelSpan(Span span) {
         this.span = span;
-        this.scope = new JrlOtelScope(this.span.makeCurrent());
     }
 
     @Override
@@ -56,7 +54,7 @@ public class JrlOtelSpan implements JrlSpan {
     }
 
     @Override
-    public JrlScope getScope() {
-        return this.scope;
+    public JrlScope makeCurrent() {
+        return new JrlOtelScope(this.span.makeCurrent());
     }
 }

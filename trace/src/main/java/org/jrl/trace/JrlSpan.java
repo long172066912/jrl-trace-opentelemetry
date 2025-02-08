@@ -43,9 +43,10 @@ public interface JrlSpan {
     void end();
 
     /**
-     * 获取scope
+     * 设置当前线程为当前span，需要执行scope的close方法
+     * 可以的话，建议在try-with-resource中调用，保证try-with-resource正常执行时，会调用close方法
      *
-     * @return
+     * @return ZeusScope
      */
-    JrlScope getScope();
+    JrlScope makeCurrent();
 }
